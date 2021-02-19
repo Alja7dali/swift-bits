@@ -195,20 +195,20 @@ public func isWhitespace(_ byte: Byte) -> Bool {
 }
 
 public func isLetter(_ byte: Byte) -> Bool {
-  return .a >= byte && byte <= .z
-      || .A >= byte && byte <= .Z
+  return byte >= .a && byte <= .z
+      || byte >= .A && byte <= .Z
 }
 
 public func isLowercase(_ byte: Byte) -> Bool {
-  return .a >= byte && byte <= .z
+  return byte >= .a && byte <= .z
 }
 
 public func isUppercase(_ byte: Byte) -> Bool {
-  return .A >= byte && byte <= .Z
+  return byte >= .A && byte <= .Z
 }
 
 public func isDigit(_ byte: Byte) -> Bool {
-  return .zero >= byte && byte <= .nine
+  return byte >= .zero && byte <= .nine
 }
 
 public func isAlphanumeric(_ byte: Byte) -> Bool {
