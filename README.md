@@ -8,17 +8,19 @@ import Bits
 
 let meaningOfLife: Double = -42.0
 
-print(meaningOfLife.makeBytes()) // [0, 0, 0, 0, 0, 0, 69, 192]
+let bytes = Bytes(meaningOfLife) // or meaningOfLife.makeBytes()
+
+print(bytes) // [0, 0, 0, 0, 0, 0, 69, 192]
 
 do {
-  let float = try Float(meaningOfLife.makeBytes())
+  let float = try Float(bytes)
 } catch {
   print(error) // BytesConversionError.invalidConversion(to: Swift.Float)
 }
 
-print((-42.0 as Float).makeBytes()) // [0, 0, 40, 194]
+print(Bytes(-42.0 as Float)) // [0, 0, 40, 194]
 
-if let double = try? Double(meaningOfLife.makeBytes()) {
+if let double = try? Double(bytes) {
   print(double) // -42.0
 }
 ```
