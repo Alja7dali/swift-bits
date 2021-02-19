@@ -246,11 +246,11 @@ public extension Bytes {
 /// MARK: Transform
 
 public extension Byte {
-  var toLowercase: Byte {
+  var lowercased: Byte {
     return isUppercase ? self + 32 : self
   }
 
-  var toUppercase: Byte {
+  var uppercased: Byte {
     return isLowercase ? self - 32 : self
   }
 }
@@ -265,11 +265,11 @@ public func toUppercase(_ byte: Byte) -> Byte {
 
 
 public extension Bytes {
-  var toLowercase: Bytes {
+  var lowercased: Bytes {
     return map { isUppercase($0) ? $0 + 32 : $0 }
   }
 
-  var toUppercase: Bytes {
+  var uppercased: Bytes {
     return map { isLowercase($0) ? $0 - 32 : $0 }
   }
 }
