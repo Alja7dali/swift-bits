@@ -21,6 +21,10 @@ public extension BytesInitializable {
   init<S: Sequence>(_ bytes: S) throws where S.Element == Byte {
     try self.init(Bytes(bytes))
   }
+
+  init<B: BytesRepresentable>(_ bytesRepresentable: B) throws {
+    try self.init(bytesRepresentable.makeBytes())
+  }
 }
 
 /// MARK: Bool
