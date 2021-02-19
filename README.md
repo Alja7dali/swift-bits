@@ -8,7 +8,7 @@ import Bits
 
 let meaningOfLife: Double = -42.0
 
-let bytes = Bytes(meaningOfLife) // or meaningOfLife.makeBytes()
+let bytes = meaningOfLife.makeBytes()
 
 print(bytes) // [0, 0, 0, 0, 0, 0, 69, 192]
 
